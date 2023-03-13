@@ -54,10 +54,12 @@ header .inner-header .logo {
     /* background: skyblue; */
     float: left;
     width: 200px;
+   
 }
 
 header .inner-header .logo img {
-    width: 100%;
+    width: 100%; 
+    /* logo width를 정하고 이미지를 꽉 채워주면 됨 */
 }
 
 header .inner-header .gnb {
@@ -142,6 +144,20 @@ section.main .main-title{
     text-align: center;
     text-shadow: 2px 2px 10px #123;
     /* 흰 글씨는 shadow 넣어주어야함 */
+    animation: uprise 2s ease-out;
+}
+
+@keyframes uprise {
+    from{
+        opacity:0;
+        top: 60%;
+    /* 밑에서 투명하게 있다가  */
+    }
+    to{
+        opacity:1;
+        top:50%;
+        /* 올라올때 선명하게 */
+    }
 }
 section.main .main-title h2 {
     font-size: 55px;
@@ -183,4 +199,232 @@ section.main .main-title .view::after{
 
 section.main .main-title .view:hover::after{
     width: 100%;
+}
+
+section .title {
+    text-align: center;
+}
+
+section .title h2 {
+    font-size: 45px;
+    color: #111;
+    margin-bottom: 5px;
+}
+section .title p {
+    font-size: 18px;
+    color: #555;
+}
+section .sub-container {
+    /* background: tomato; */
+    /* 모두에게 클래스 주고 통함 */
+    width: 74%;
+    margin: 0 auto;
+    /* 섹션 선 맞추기 */
+}
+section.about {
+    /* background: orange; */
+    margin: 80px 0;
+}
+section.about .sub-container {
+    /* background: orange; */
+    margin-top: 30px;
+    border-bottom: 1px solid #ddd;
+}
+section.about .sub-container li {
+    /* border: 1px solid #000; */
+    box-sizing: border-box;
+    float: left;
+    height: 510px;
+    width: 33.3333%;
+}
+section.about .sub-container li .img-box {
+    /* background: red; */
+    overflow: hidden;
+}
+section.about .sub-container li .img-box img {
+    width: 100%;
+    transition:0.6s;
+    /* 조금더 천천히 transition */
+    /* hover가 아니고 원본에 걸 것 */
+}
+
+section.about .sub-container li a:hover .img-box img {
+    transform: scale(1.2);
+    /* 1.2배 확대 */
+}
+section.about ul li a .text {
+    padding: 25px;
+}
+section.about ul li a .text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+section.about ul li a .text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+section.about ul li a .text p.more {
+    /* 일괄 대소문자변경 <-> lowercase */
+    text-transform: uppercase;
+    font-weight: 700;
+    /* background: skyblue; */
+    padding-left: 40px;
+    /* 동그라미 들어갈 공간 만듬  */
+    position:relative;
+
+    /* border: 1px solid #000; */
+}
+section.about ul li a .text p.more::before {
+    content: '→';
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background: #ff8342;
+    /* display: block; 
+    position 걸면 자동으로 display: block 됨 */
+    /* 원 위치 조정 */
+    position:absolute;
+    left: 0;
+    top: -7px;
+}
+/* section innovation style */
+section.innovation {
+    margin-bottom: 150px;
+}
+section.innovation .img-box {
+    height: 540px;
+    background: url('../img/product_1.jpg')
+        no-repeat center / cover;
+        position: relative;
+        margin-top: 50px;
+}
+section.innovation .img-box .inner {
+    background: #3a3c4e;
+    width: 80%;
+    color: #fff;
+    /* border: 2px solid #000; */
+
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+section.innovation .img-box .inner h3 {
+    background: #fff;
+    color: #222;
+    font-size: 18px;
+    padding: 25px 45px;
+    box-sizing: border-box;
+}
+section.innovation .img-box .inner .bottom {
+    padding: 35px 85px;
+    box-sizing: border-box;
+
+}
+section.innovation .img-box .inner .bottom p {
+    /* background: yellow; */
+    float: left;
+    width: 70%;
+    line-height: 1.6;
+}
+section.innovation .img-box .inner .bottom a {
+    background: orange;
+    float: right;
+    padding: 7px 30px;
+    border-radius: 50px;
+}
+section.innovation .img-box .inner .bottom a:hover {
+    background: #f86010;
+}
+
+/* section.me style */
+section.me {
+    background: url('../img/me.jpg')
+        no-repeat center/cover;
+    padding: 80px 0;
+    margin-bottom: 150px;
+}
+section.me ul.list {
+    margin-top: 50px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+section.me ul.list > li{
+    /* 후손 말고 직속 자식에게만 지정 > */
+    /* border: 3px solid #000; */
+    padding: 30px 60px;
+}
+section.me ul.list > li:first-child {
+    border-bottom: 1px solid #ddd;
+}
+section.me ul.list > li h3 {
+    /* background: tomato; */
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+section.me ul.list > li h3 span {
+    position:absolute;
+    left: -25px;
+    color: #ff8342;
+    /* 아이콘은 텍스트임  */
+    /* 아이콘 바깥으로 미는 과정 
+    영역 밖으로 치워버리기 */
+}
+section.me ul.list > li p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+section.me ul.list > li .more {
+    font-size: 16px;
+    font-weight: 700;
+}
+section.me ul.list > li .more span {
+    color: #ff8342;
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+section.me ul.list ul.in {
+    margin-bottom: 30px;
+}
+section.me ul.list ul.in li em {
+    background: tomato;
+    /* float나 position이 적용되면 자동으로 블록으로 바뀜 */
+    float: left;
+    width: 12%;
+    /* width로 벌려서 옆에 글의 길이를 맞출 수 있음
+    마진보다는 width를 줘야 글의 시작점을 맞출 수 있음  */
+    font-weight: 700;
+}
+section.me ul.list ul.in li p {
+    /* background: skyblue; */
+    float: left;
+    position: relative;
+}
+
+section.me ul.list ul.in li p::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    /* background: #ff8342; */
+    position: absolute;
+    left: -40px;
+    top: 10px;
+}
+
+#incruit-btn {
+    display: block;
+    width: 280px;
+    background: #ff8342;
+    color: #fff;
+    margin: 20px auto 0;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 10px 0;
+    cursor: pointer;
+    /* 버튼이 리셋되면 손모양이 나오지 않아 버튼을 만들어줌 */
 }
